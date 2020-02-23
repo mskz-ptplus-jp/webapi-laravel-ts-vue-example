@@ -1,0 +1,10 @@
+{
+    "name": "apache/webapi-laravel-ts-vue-example",
+    "authors": [
+        {
+            "name": "zkangaroo",
+            "email": "z.kangaroo@gmail.com"
+        }
+    ],
+    "require": {}
+}
