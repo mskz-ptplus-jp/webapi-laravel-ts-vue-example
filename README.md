@@ -2,9 +2,8 @@
 
 ## Require
 
-- [Composer](https://getcomposer.org/download/)
-
-
+- [Composer](https://getcomposer.org/)
+- [Node.js](https://nodejs.org/)
 
 ## License
 
