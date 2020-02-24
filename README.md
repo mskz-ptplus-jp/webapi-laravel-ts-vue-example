@@ -24,6 +24,13 @@ npm install
 cp .env.template .env; php artisan key:generate
 ```
 
+Database setup
+
+```
+touch database/database.sqlite
+php artisan migrate
+```
+
 and start.
 
 ```
