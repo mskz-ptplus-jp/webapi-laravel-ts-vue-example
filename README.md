@@ -4,7 +4,12 @@
 
 This repository is a Example to develop Web API using [Laravel](https://laravel.com/), [TypeScript](https://www.typescriptlang.org/), [Vue.js](https://vuejs.org/).
 
-## Require
+## System Requirements
+
+- [Apache](https://httpd.apache.org/)
+- [SQLite](https://www.sqlite.org/)
+
+## Requirement
 
 - [Composer](https://getcomposer.org/)
 - [Node.js](https://nodejs.org/)
