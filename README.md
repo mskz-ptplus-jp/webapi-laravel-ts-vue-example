@@ -14,6 +14,21 @@ This repository is a Example to develop Web API using [Laravel](https://laravel.
 - [Composer](https://getcomposer.org/)
 - [Node.js](https://nodejs.org/)
 
+## Install and Run
+
+Install the required packages.
+
+```
+composer install
+npm install
+```
+
+and start.
+
+```
+npm run production
+```
+
 ## License
 
 Copyright (c) ptplus.jp All rights reserved.
