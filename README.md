@@ -21,7 +21,7 @@ Install the required packages.
 ```
 composer install
 npm install
-cp .env.example .env; php artisan key:generate
+cp .env.template .env; php artisan key:generate
 ```
 
 and start.
