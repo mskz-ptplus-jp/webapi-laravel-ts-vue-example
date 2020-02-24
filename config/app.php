@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Example WebAPI with Laravel, TypeScript, Vue.js'),
 
     /*
     |--------------------------------------------------------------------------
