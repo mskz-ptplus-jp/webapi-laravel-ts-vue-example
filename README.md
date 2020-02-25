@@ -6,13 +6,13 @@ This repository is a Example to develop Web API using [Laravel](https://laravel.
 
 ## System Requirements
 
-- [Apache](https://httpd.apache.org/)
-- [SQLite](https://www.sqlite.org/)
+-   [Apache](https://httpd.apache.org/)
+-   [SQLite](https://www.sqlite.org/)
 
 ## Requirement
 
-- [Composer](https://getcomposer.org/)
-- [Node.js](https://nodejs.org/)
+-   [Composer](https://getcomposer.org/)
+-   [Node.js](https://nodejs.org/)
 
 ## Install and Run
 
@@ -29,6 +29,12 @@ Database setup
 ```
 touch database/database.sqlite
 php artisan migrate
+```
+
+[Adjust .htaccess as needed](https://github.com/mskz-ptplus-jp/webapi-laravel-ts-vue-example/commit/705a60f251e2d2b3b24a9394267437e93a07e2e5#diff-8c939924d71cc8c98dd9ae031985b8b7R9)
+
+```
+RewriteBase /webapi-laravel-ts-vue-example/
 ```
 
 and start.
