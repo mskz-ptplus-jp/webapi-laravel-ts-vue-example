@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "ES6",
+        "moduleResolution": "node"
+    },
+    "exclude": [
+        "node_modules",
+        "vendor"
+    ],
+    "include": [
+        "resources/ts/*",
+        "resources/ts/**/*"
+    ]
+}
