@@ -31,12 +31,6 @@ touch database/database.sqlite
 php artisan migrate
 ```
 
-[Adjust .htaccess as needed](https://github.com/mskz-ptplus-jp/webapi-laravel-ts-vue-example/commit/705a60f251e2d2b3b24a9394267437e93a07e2e5#diff-8c939924d71cc8c98dd9ae031985b8b7R9)
-
-```
-RewriteBase /webapi-laravel-ts-vue-example/
-```
-
 and start.
 
 ```
