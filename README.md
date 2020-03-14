@@ -24,17 +24,23 @@ npm install
 cp .env.template .env; php artisan key:generate
 ```
 
-Database setup
-
+Adjust .env as needed
 ```
-touch database/database.sqlite
-php artisan migrate
+APP_URL=(your site url)
+ASSET_URL=(your site url/path/to)
 ```
 
 [Adjust .htaccess as needed](https://github.com/mskz-ptplus-jp/webapi-laravel-ts-vue-example/commit/705a60f251e2d2b3b24a9394267437e93a07e2e5#diff-8c939924d71cc8c98dd9ae031985b8b7R9)
 
 ```
 RewriteBase /webapi-laravel-ts-vue-example/
+```
+
+Database setup
+
+```
+touch database/database.sqlite
+php artisan migrate
 ```
 
 and start.
