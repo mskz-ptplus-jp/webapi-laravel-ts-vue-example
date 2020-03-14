@@ -11,4 +11,4 @@
 |
 */
 
-Route::resource('/', 'TopController');
+Route::resource('/', 'HomeController');
