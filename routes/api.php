@@ -15,4 +15,5 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['api'], 'prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::resource('users', 'UserController');
+    Route::resource('posts', 'PostController');
 });
