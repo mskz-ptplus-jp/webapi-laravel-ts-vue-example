@@ -53,4 +53,4 @@ npm run production
 
 Copyright (c) ptplus.jp All rights reserved.
 
-Licensed under the [Apache-2.0](LICENSE.txt) license.
+Licensed under the [Apache-2.0](LICENSE) license.
