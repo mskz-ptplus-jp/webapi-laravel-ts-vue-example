@@ -41,7 +41,7 @@ class UserTest extends TestCase
     /**
      * @test
      * @depends Create
-     * @return void
+     * @return \App\Models\User
      */
     public function Update(\App\Models\User $model)
     {
@@ -49,6 +49,21 @@ class UserTest extends TestCase
         $this->assertDatabaseHas($model->getTable(), [
             'email' => $model->email,
             'updated_at' => $model->updated_at
+        ]);
+
+        return $model;
+    }
+
+    /**
+     * @test
+     * @depends Update
+     * @return void
+     */
+    public function Remove(\App\Models\User $model)
+    {
+        $model->delete();
+        $this->assertDatabaseMissing($model->getTable(), [
+            'email' => $model->email,
         ]);
     }
 }
