@@ -2,8 +2,7 @@
 
 namespace Tests\Feature\Models;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+use Carbon\Carbon;
 use Tests\TestCase;
 
 class PostTest extends TestCase
@@ -37,12 +36,25 @@ class PostTest extends TestCase
      */
     public function Update(\App\Models\Post $model)
     {
-        $model->updated_at = new \DateTime();
+        $model->updated_at = new Carbon();
         $this->assertDatabaseHas($model->getTable(), [
             'id' => $model->id,
             'updated_at' => $model->updated_at
         ]);
 
         return $model;
+    }
+
+    /**
+     * @test
+     * @depends Update
+     * @return void
+     */
+    public function Remove(\App\Models\Post $model)
+    {
+        $model->delete();
+        $this->assertDatabaseMissing($model->getTable(), [
+            'id' => $model->id,
+        ]);
     }
 }
