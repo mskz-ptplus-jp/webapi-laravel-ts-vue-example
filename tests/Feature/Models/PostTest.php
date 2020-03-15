@@ -7,18 +7,24 @@ use Tests\TestCase;
 
 class PostTest extends TestCase
 {
+    protected $faker = null;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->faker = \Faker\Factory::create('ja_JP');
+    }
+
     /**
      * @test
      * @return \App\Models\Post
      */
     public function Create()
     {
-        $faker = \Faker\Factory::create('ja_JP');
         $model = \App\Models\Post::create([
-            'title' => $faker->text(20),
-            'body' => $faker->text(200),
-            'created_at' => $faker->dateTime(),
-            'updated_at' => $faker->dateTime(),
+            'title' => $this->faker->text(20),
+            'body' => $this->faker->text(200),
         ]);
         $this->assertDatabaseHas($model->getTable(), [
             'id' => $model->id,
@@ -36,10 +42,11 @@ class PostTest extends TestCase
      */
     public function Update(\App\Models\Post $model)
     {
-        $model->updated_at = new Carbon();
+        $model->title = $this->faker->text(20);
+        $model->save();
         $this->assertDatabaseHas($model->getTable(), [
             'id' => $model->id,
-            'updated_at' => $model->updated_at
+            'title' => $model->title
         ]);
 
         return $model;
