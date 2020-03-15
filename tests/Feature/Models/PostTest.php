@@ -29,4 +29,20 @@ class PostTest extends TestCase
 
         return $model;
     }
+
+    /**
+     * @test
+     * @depends Create
+     * @return \App\Models\Post
+     */
+    public function Update(\App\Models\Post $model)
+    {
+        $model->updated_at = new \DateTime();
+        $this->assertDatabaseHas($model->getTable(), [
+            'id' => $model->id,
+            'updated_at' => $model->updated_at
+        ]);
+
+        return $model;
+    }
 }
