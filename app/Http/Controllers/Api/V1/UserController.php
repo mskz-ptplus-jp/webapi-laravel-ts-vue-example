@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return "App\Http\Controllers\Api\V1\UserController\index";
+        $models = User::all();
+        return response()->json($models);
     }
 
     /**
@@ -35,7 +37,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new User();
+        $model->name = $request->name;
+        $model->email = $request->email;
+        $model->password = bcrypt($request->password);
+        $model->save();
+
+        return response()->json([$model]);
     }
 
     /**
