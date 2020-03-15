@@ -28,8 +28,6 @@ class UserTest extends TestCase
             'email' => $this->faker->unique()->email(),
             'password' => bcrypt('1234'),
             'email_verified_at' => $this->faker->dateTime(),
-            'created_at' => $this->faker->dateTime(),
-            'updated_at' => $this->faker->dateTime(),
         ]);
         $this->assertDatabaseHas($model->getTable(), [
             'email' => $model->email
@@ -45,10 +43,11 @@ class UserTest extends TestCase
      */
     public function Update(\App\Models\User $model)
     {
-        $model->updated_at = new \DateTime();
+        $model->name = $this->faker->unique()->userName();
+        $model->update();
         $this->assertDatabaseHas($model->getTable(), [
             'email' => $model->email,
-            'updated_at' => $model->updated_at
+            'name' => $model->name
         ]);
 
         return $model;
