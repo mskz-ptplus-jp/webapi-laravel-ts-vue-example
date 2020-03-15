@@ -25,6 +25,8 @@ class UserControllerTest extends TestCase
         $response = $this->post(self::$endpoint, $model->toArray());
         $json = json_decode($response->getContent());
 
+        $response = $this->post(self::$endpoint, $model->toArray());
+        $json = json_decode($response->getContent());
         $response->assertStatus(200);
         $this->assertEquals(
             $model->email,
