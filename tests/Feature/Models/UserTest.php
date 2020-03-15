@@ -19,7 +19,7 @@ class UserTest extends TestCase
 
     /**
      * @test
-     * @return void
+     * @return \App\Models\User
      */
     public function Create()
     {
