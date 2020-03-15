@@ -9,7 +9,6 @@ use Tests\TestCase;
 class UserTest extends TestCase
 {
     protected $faker = null;
-    protected $model = null;
 
     protected function setUp(): void
     {
@@ -20,12 +19,11 @@ class UserTest extends TestCase
 
     /**
      * @test
-     *
      * @return void
      */
     public function Create()
     {
-        $this->model = \App\Models\User::create([
+        $model = \App\Models\User::create([
             'name' => $this->faker->unique()->userName(),
             'email' => $this->faker->unique()->email(),
             'password' => bcrypt('1234'),
@@ -33,8 +31,24 @@ class UserTest extends TestCase
             'created_at' => $this->faker->dateTime(),
             'updated_at' => $this->faker->dateTime(),
         ]);
-        $this->assertDatabaseHas($this->model->getTable(), [
-            'email' => $this->model->email
+        $this->assertDatabaseHas($model->getTable(), [
+            'email' => $model->email
+        ]);
+
+        return $model;
+    }
+
+    /**
+     * @test
+     * @depends Create
+     * @return void
+     */
+    public function Update(\App\Models\User $model)
+    {
+        $model->updated_at = new \DateTime();
+        $this->assertDatabaseHas($model->getTable(), [
+            'email' => $model->email,
+            'updated_at' => $model->updated_at
         ]);
     }
 }
