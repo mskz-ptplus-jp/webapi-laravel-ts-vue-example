@@ -41,7 +41,10 @@ class UserController extends Controller
         $model->name = $request->name;
         $model->email = $request->email;
         $model->password = bcrypt($request->password);
-        $model->save();
+        //$model->save();
+        $model = User::updateOrCreate(
+            [$model->toArray()]
+        );
 
         return response()->json([$model]);
     }

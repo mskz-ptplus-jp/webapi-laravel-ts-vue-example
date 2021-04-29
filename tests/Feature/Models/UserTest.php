@@ -26,7 +26,7 @@ class UserTest extends TestCase
         $model = \App\Models\User::create([
             'name' => $this->faker->unique()->userName(),
             'email' => $this->faker->unique()->email(),
-            'password' => bcrypt('1234'),
+            'password' => '1234',
             'email_verified_at' => $this->faker->dateTime(),
         ]);
         $this->assertDatabaseHas($model->getTable(), [
